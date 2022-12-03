@@ -1,0 +1,48 @@
+baseURL = "https://"
+title = "Website Name"
+theme = "svugo"
+languageCode = "en-US"
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+enableGitInfo = false
+defaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    lastmod = "Updated:"
+
+[author]
+  name = "Your Name Here"
+
+[params]
+  description = "Your site description"
+  copyright = "&copy; 2021 -- {Year} Your Name"
+  license = "Your license"
+  rss = "RSS"
+  highlight = true
+
+[params.social]
+  [params.social.GitHub]
+    title = "GitHub"
+    url = "https://"
+    weight = 0
+  [params.social.Mastodon]
+    title = "Mastodon"
+    url = "https://"
+    weight = 1
+
+[frontmatter]
+  lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
+
+[permalinks]
+  posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
+
+  [markup.tableOfContents]
+    ordered = true

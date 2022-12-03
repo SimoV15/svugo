@@ -1,0 +1,12 @@
+name = "svugo"
+license = "MIT"
+licenselink = "https://github.com/SimoV15/svugo/blob/main/LICENSE.md"
+description = "Minimal Hugo theme"
+homepage = "https://sv15.xyz"
+tags = ["minimal", "blog", "simple", "minimalist"]
+features = ["blog"]
+min_version = "0.18"
+
+[author]
+  name = "Simone Vaccarin"
+  homepage = "https://sv15.xyz"

@@ -1,0 +1,22 @@
+  <footer>
+    <hr/>
+    <h5>
+      {{ if .IsHome }}
+        {{ with .Site.Params.copyright }}
+          {{ replace . "{Year}" now.Year | markdownify}}
+        {{ end }}
+        {{ if .Site.Params.rss }}
+          | <a href="{{.Site.BaseURL }}/index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">{{ .Site.Params.rss }}</a>
+        {{ end }}
+        {{ with .Site.Params.social }}
+        {{ range . }}
+          | <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">{{ .title }}</a>
+        {{ end }}
+        {{ end }}
+      {{ else }}
+         {{ .Site.Params.license | markdownify  }}
+      {{ end }}
+    </h5>
+  </footer>
+  </body>
+</html>
