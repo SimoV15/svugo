@@ -1,0 +1,2 @@
+# svugo
+Minimal Hugo theme
