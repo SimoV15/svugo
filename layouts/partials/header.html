@@ -18,7 +18,9 @@
     <meta property="og:type" content="article">
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
-    <link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="{{ .Site.Title }}">
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     {{ "<!-- Stylesheets -->" | safeHTML }}
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
