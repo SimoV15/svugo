@@ -19,8 +19,6 @@ defaultContentLanguage = "en"
 
 [params]
   description = "Your site description"
-  copyright = "&copy; 2021 -- {Year} Your Name"
-  license = "Your license"
   rss = "RSS"
   highlight = true
 
