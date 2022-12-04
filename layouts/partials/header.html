@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="{{ "css/syntax-light.css" | relURL }}" media="(prefers-color-scheme: light)"/>
     <link rel="stylesheet" href="{{ "css/syntax-dark.css" | relURL }}" media="(prefers-color-scheme: dark)"/>
     {{ end }}
-    <link rel="manifest" href="/manifest.webmanifest">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
     {{ "<!-- Build date: " | safeHTML }}{{ (now.Format "Mon, 02 Jan 2006 15:04:05 MST") | safeHTML }}{{ " -->" | safeHTML }}
     <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
   </head>
