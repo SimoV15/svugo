@@ -1,16 +1,16 @@
 {{ partial "header.html" . }}
-<hr/>
+<hr />
 <div class="article-meta">
-<h1>{{ .Title | markdownify }}</h1>
+  <h1>{{ .Title | markdownify }}</h1>
   {{- if isset .Params "date" -}}
   {{ if eq .Lastmod .Date }}
-    <h5>{{ .Date | time.Format ":date_long" }}</h5>
+  <h5>{{ .Date | time.Format ":date_long" }}</h5>
   {{ else }}
-    <h5>{{ .Site.Params.Lastmod}} {{ .Lastmod | time.Format ":date_long" }}</h5>
+  <h5>{{ .Site.Params.Lastmod}} {{ .Lastmod | time.Format ":date_long" }}</h5>
   {{ end }}
   {{- end -}}
 </div>
 </br>
 <main>
-{{ .Content }}
+  {{ .Content }}
 </main>

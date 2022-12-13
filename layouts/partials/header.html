@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ hugo.Generator }}
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta property="og:url" content="{{ .RelPermalink }}">
-    <meta name="author" content="{{ with .Site.Author }}{{ . }}{{ end }}">
-    {{ if .IsHome }}
-    <title>{{ .Site.Title }}</title>
-    <meta property="og:title" content="{{ .Site.Title }}">
-    <meta property="og:type" content="website">
-    <meta name="description" content="{{ .Site.Params.description }}">
-    {{ else }}
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta property="og:title" content="{{ .Site.Title }}">
-    <meta property="og:type" content="article">
-    <meta name="description" content="{{ .Site.Params.description }}">
-    {{ end }}
-    {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
-    <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
-    {{ "<!-- Stylesheets -->" | safeHTML }}
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
-    {{ if not .IsHome }}
-    <link rel="stylesheet" href="{{ "css/syntax-light.css" | relURL }}" media="(prefers-color-scheme: light)"/>
-    <link rel="stylesheet" href="{{ "css/syntax-dark.css" | relURL }}" media="(prefers-color-scheme: dark)"/>
-    {{ end }}
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.webmanifest">
-    {{ "<!-- Build date: " | safeHTML }}{{ (now.Format "Mon, 02 Jan 2006 15:04:05 MST") | safeHTML }}{{ " -->" | safeHTML }}
-    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-  </head>
-  <body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ hugo.Generator }}
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta property="og:url" content="{{ .RelPermalink }}">
+<meta name="author" content="{{ with .Site.Author }}{{ . }}{{ end }}">
+{{ if .IsHome }}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="website">
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ else }}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="article">
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ end }}
+{{ with .OutputFormats.Get "rss" -}}
+{{ printf `
+<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+<link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
+{{ "<!-- Stylesheets -->" | safeHTML }}
+<link rel="stylesheet" href="{{ " css/style.css" | relURL }}" />
+{{ if not .IsHome }}
+<link rel="stylesheet" href="{{ " css/syntax-light.css" | relURL }}" media="(prefers-color-scheme: light)" />
+<link rel="stylesheet" href="{{ " css/syntax-dark.css" | relURL }}" media="(prefers-color-scheme: dark)" />
+{{ end }}
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+{{ "<!-- Build date: " | safeHTML }}{{ (now.Format "Mon, 02 Jan 2006 15:04:05 MST") | safeHTML }}{{ " -->" | safeHTML }}
+<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+</head>
+
+<body>
