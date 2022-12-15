@@ -22,12 +22,11 @@
 {{ printf `
 <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
-<link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
 {{ "<!-- Stylesheets -->" | safeHTML }}
-<link rel="stylesheet" href="{{ " css/style.css" | relURL }}" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
 {{ if not .IsHome }}
-<link rel="stylesheet" href="{{ " css/syntax-light.css" | relURL }}" media="(prefers-color-scheme: light)" />
-<link rel="stylesheet" href="{{ " css/syntax-dark.css" | relURL }}" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" type="text/css" href="/css/syntax-light.css" media="(prefers-color-scheme: light)" />
+<link rel="stylesheet" type="text/css" href="/css/syntax-dark.css" media="(prefers-color-scheme: dark)" />
 {{ end }}
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
